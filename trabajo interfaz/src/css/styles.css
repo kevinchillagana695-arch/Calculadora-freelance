@@ -669,7 +669,38 @@ main {
         padding: 12px 35px;
         font-size: 12px;
     }
+@media (max-width: 767px) {
 
+    /* ... (tus otros estilos anteriores) ... */
+
+    /* Calculator: Campos uno debajo de otro en móvil */
+    .calculadora__container {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+        gap: 15px;
+    }
+
+    .calculadora__campo {
+        grid-template-columns: 110px minmax(0, 1fr); /* Ajusta el espacio de la etiqueta y el input */
+        gap: 10px;
+    }
+
+    .calculadora__campo label {
+        font-size: 12px;
+    }
+
+    .calculadora__campo input,
+    .calculadora__campo select,
+    .calculadora__campo textarea {
+        height: 38px;
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .calculadora__campo textarea {
+        height: 38px;
+    }
+
+}
     /* Results */
 
     .resultados {
@@ -743,16 +774,22 @@ main {
 
 }
 
-.footer__social{
+.footer__social {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding-bottom: 10px;
+    gap: 20px;
 }
 
 .footer__social i {
-    font-size: 90px;
+    font-size: 45px; 
     cursor: pointer;
+    color: var(--colorTexto); 
+    transition: color 0.3s ease;
+}
+.footer__social i:hover {
+    color: var(--colorAccent);
 }
 
 @media (max-width: 600px) {
@@ -770,6 +807,45 @@ main {
     }
 
     .footer__social i {
-        font-size: 48px;
+        font-size: 30px; 
     }
+}
+/*Analisis de los datos mobile*/
+@media (max-width:767px) {
+    .resultados {
+        padding: 40px 20px;
+    }
+
+    .resultados__card {
+        padding: 25px 20px;
+    }
+
+    .resultados__title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .resultados__tarifa {
+        padding: 18px 20px;
+        font-size: 16px;
+    }
+
+    .resultados__container {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* Mantiene las 2 columnas como en la imagen */
+        gap: 12px;
+    }
+
+    .resultados__detalle {
+        padding: 15px;
+    }
+
+    .resultados__detalle h3 {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .resultados__detalle strong {
+        font-size: 16px;
+    }
+    
 }
